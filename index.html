@@ -18,7 +18,7 @@
             font-family: 'DM Sans', sans-serif;
             background-color: #FAF6F1;
             color: #2D2D2D;
-            line-height: 1.7;
+            line-height: 1.15;
             padding: 3rem 1.5rem;
         }
 
@@ -105,8 +105,6 @@
 
         .examples {
             margin-top: 2rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #E0DBD5;
         }
 
         .sign-off {
@@ -117,7 +115,14 @@
         .author {
             margin-top: 2rem;
             font-weight: 500;
+        }
+
+        .author a {
             color: #555;
+        }
+
+        .author a:hover {
+            color: #333;
         }
     </style>
 </head>
@@ -136,7 +141,7 @@
 
         <div class="section">
             <h2>Setting up Claude Code</h2>
-            <p>Setting up Claude Code is slightly scary if you've never touched your Terminal before like me. But once I got past the hackery UI, I found it easier and more powerful than the web/app versions:</p>
+            <p>Setting up Claude Code is slightly scary if you've never touched your Terminal before (like me). But once I got past the hackery UI, I found it easier and more powerful than the web/app versions:</p>
 
             <ol>
                 <li>Upgrade to the Pro ($20/month) or Max ($200/month) plan.</li>
@@ -166,13 +171,13 @@
             <p>More importantly, though, is <strong>adopting the right <em>attitude</em></strong> about Claude Code. Most of the tips below are about <em>experimentation, looseness,</em> and <em>play</em>—none of this is high-pressure, and the AI is more adaptive and subtle than you think.</p>
 
             <ul class="tip-list">
+                <li><strong>Keep it simple to start.</strong> Pick a tiny project before you try a harder one. Don't worry about skills, subagents, webhooks, and all other "best practice" guides until you feel comfortable building with the basics. Test step-by-step: you can always add more features or styling later.</li>
                 <li><strong>The way you talk to Claude doesn't matter.</strong> Even in your terminal, Claude Code is a chatbot just like ChatGPT, so it's ok to ramble and be unclear and not know the right words for things. Unlike writing real code, Claude Code won't break because of an extra comma.</li>
                 <li><strong>Default to trying stuff.</strong> Rather than making assumptions about what Claude can/can't do, get in the habit of asking Claude to do things, and having it tell you if it can't. Over time you'll grasp what is within or beyond its abilities. Or just type and ask: "do you know how to do X?"</li>
                 <li><strong>Just approve everything.</strong> Someone will yell at me for saying this, but you will learn fastest by approving every permission/action Claude asks for, as long as it's not deleting all your files or whatever. Sometimes Claude will also tell you to get accounts (e.g. Github, Vercel). If it's free, just do it.</li>
-                <li><strong>Call Claude on its bullshit.</strong> Claude Code has its own form of sycophancy, which is that it says it's done things and it hasn't. If this happens, screenshot the problem or paste the error message. Conversely, if Claude says it <em>can't</em> do something, you can always say "Try again" or "Find another way."</li>
+                <li><strong>Call Claude on its bullshit.</strong> Claude Code has its own form of sycophancy, which is that it says it's done things and it hasn't. Always check yourself. If this happens, screenshot the problem or paste the error message. Conversely, if Claude says it <em>can't</em> do something, you can always say "Try again" or "Find another way."</li>
                 <li><strong>Use images and screenshots.</strong> Claude can't always "see" its outputs (e.g. a website) but it can see your computer files, so I take screenshots and save them to my Documents folder. Then you can say "This button looks broken—look at my latest screenshot in Documents" and it can do that. You can also save inspiration photos—e.g. save a picture of another website you like, and say "redesign my site in the style of this."</li>
                 <li><strong>Beware personal data leaks on Github.</strong> It's great to open-source your code so other people can try your project. But if your project includes personal data (e.g. iMessage Wrapped), make sure to tell Claude to "Wipe the code of all personal information, e.g. contact names, before pushing to Github."</li>
-                <li><strong>Keep it simple to start.</strong> Pick a tiny project before you try a harder one. Don't worry about skills, subagents, webhooks, and all other "best practice" guides until you feel comfortable building with the basics.</li>
                 <li><strong>Ask AI for help.</strong> If you get confused, open a normal Claude or ChatGPT window, screenshot/paste your problem, and ask what's going wrong.</li>
             </ul>
         </div>
@@ -188,7 +193,7 @@
         </div>
 
         <p class="sign-off">Happy vibecoding!</p>
-        <p class="author">Jasmine Sun</p>
+        <p class="author"><a href="http://jasmi.news">Jasmine Sun</a></p>
     </div>
 </body>
 </html>
