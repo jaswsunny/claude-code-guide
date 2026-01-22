@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code for Dummies</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background-color: #FAF6F1;
+            color: #2D2D2D;
+            line-height: 1.7;
+            padding: 3rem 1.5rem;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        p {
+            margin-bottom: 1.25rem;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .toc {
+            margin-bottom: 2rem;
+            padding-left: 1.25rem;
+        }
+
+        .toc li {
+            margin-bottom: 0.25rem;
+        }
+
+        ol, ul {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.75rem;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        code {
+            font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+            background-color: #EDE8E2;
+            padding: 0.15rem 0.4rem;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        a {
+            color: #5A6B4D;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        a:hover {
+            color: #3D4A33;
+        }
+
+        .section {
+            margin-bottom: 2.5rem;
+        }
+
+        .tip-list li {
+            margin-bottom: 1rem;
+        }
+
+        .examples {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #E0DBD5;
+        }
+
+        .sign-off {
+            margin-top: 2.5rem;
+            font-style: italic;
+        }
+
+        .author {
+            margin-top: 2rem;
+            font-weight: 500;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Claude Code for Dummies</h1>
+
+        <p class="intro">I am dumb enough that even the existing "Claude Code for nontechnical people" guides were still too scary for me. So I made one that is even dumber:</p>
+
+        <ol class="toc">
+            <li>Minimal setup for Claude Code</li>
+            <li>Ideas for starter projects</li>
+            <li>Tips for talking to Claude Code</li>
+            <li>How I built two of my first projects</li>
+        </ol>
+
+        <div class="section">
+            <h2>Setting up Claude Code</h2>
+            <p>Setting up Claude Code is slightly scary if you've never touched your Terminal before like me. But once I got past the hackery UI, I found it easier and more powerful than the web/app versions:</p>
+
+            <ol>
+                <li>Upgrade to the Pro ($20/month) or Max ($200/month) plan.</li>
+                <li>I <a href="https://code.claude.com/docs/en/setup">installed Claude Code</a> in my Terminal, which is an app already on your computer. Once it installs, type <code>claude</code> and hit Enter to start a session of Claude Code.</li>
+                <li>Make sure it says "Opus 4.5" at the top of the screen, or ask what model it's using (and tell it to switch to Opus 4.5 if not).</li>
+                <li>Then you can start: tell it your project idea or command in plain English, and it'll type back. You can have back-and-forths for brainstorming, execution, etc. Terminal looks scary but is basically chat in a different font.</li>
+                <li>When you want to start a new session of Claude Code (e.g. different projects in different windows), hit Cmd-N in the Terminal and type <code>claude</code> again.</li>
+                <li>Your projects start as a file that's "local" to your computer, not on the cloud where other devices can access. Tell Claude to host it on a website if you want to share it. Then future updates will need to be explicitly deployed to the cloud (or tell Claude to keep local/cloud in sync).</li>
+            </ol>
+        </div>
+
+        <div class="section">
+            <h2>Starter Project Ideas</h2>
+            <p>If you don't immediately think of a software-shaped problem in your life, I recommend picking a <strong>dead-simple starter project</strong> just to try it out. Here are some ideas for things to ask Claude:</p>
+
+            <ul>
+                <li><strong>Turn a CSV into a report</strong> with charts, plots, and insights. You could use some actual data you have, or try exporting your Goodreads data, Substack data, etc instead. Suggest edits, then save the report as a PDF.</li>
+                <li><strong>Make a static website.</strong> This can be a personal website, an informational page, a gallery of images, or something else. For example, you can draft your website content in Google Docs, export it as a Markdown file (easy for Claude to read), and then tell Claude to convert it into a site. Then, play with the design by giving it inspiration images or fonts/colors/vibes. Finally, ask it to help you host it on a free Github account.</li>
+                <li><strong>Build a personal tracker app.</strong> Tracker apps are simple and fun to personalize: Claude can make a site for you to log your books, movies, recipes, health stats, journaling, or anything else. Then actually use it, and fix bugs / add features as you go.</li>
+                <li><strong>Automate an existing workflow.</strong> Think of a rote task you have to do, e.g. "get transcripts from YouTube videos" or "format a document according to brand guidelines." Explain to Claude what you do manually today, and ask it to write a script to help you automate it for the future. Test and debug until it works.</li>
+                <li><strong>Design a custom game for a loved one.</strong> Claude can help you make a simple game like 20 Questions, Wordle, or Brick Breaker (or any other idea). What's fun is customizing the graphics and theme based on someone's unique interests, then building a site to send to them.</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Tips for Talking to Claude Code</h2>
+            <p>More importantly, though, is <strong>adopting the right <em>attitude</em></strong> about Claude Code. Most of the tips below are about <em>experimentation, looseness,</em> and <em>play</em>—none of this is high-pressure, and the AI is more adaptive and subtle than you think.</p>
+
+            <ul class="tip-list">
+                <li><strong>The way you talk to Claude doesn't matter.</strong> Even in your terminal, Claude Code is a chatbot just like ChatGPT, so it's ok to ramble and be unclear and not know the right words for things. Unlike writing real code, Claude Code won't break because of an extra comma.</li>
+                <li><strong>Default to trying stuff.</strong> Rather than making assumptions about what Claude can/can't do, get in the habit of asking Claude to do things, and having it tell you if it can't. Over time you'll grasp what is within or beyond its abilities. Or just type and ask: "do you know how to do X?"</li>
+                <li><strong>Just approve everything.</strong> Someone will yell at me for saying this, but you will learn fastest by approving every permission/action Claude asks for, as long as it's not deleting all your files or whatever. Sometimes Claude will also tell you to get accounts (e.g. Github, Vercel). If it's free, just do it.</li>
+                <li><strong>Call Claude on its bullshit.</strong> Claude Code has its own form of sycophancy, which is that it says it's done things and it hasn't. If this happens, screenshot the problem or paste the error message. Conversely, if Claude says it <em>can't</em> do something, you can always say "Try again" or "Find another way."</li>
+                <li><strong>Use images and screenshots.</strong> Claude can't always "see" its outputs (e.g. a website) but it can see your computer files, so I take screenshots and save them to my Documents folder. Then you can say "This button looks broken—look at my latest screenshot in Documents" and it can do that. You can also save inspiration photos—e.g. save a picture of another website you like, and say "redesign my site in the style of this."</li>
+                <li><strong>Beware personal data leaks on Github.</strong> It's great to open-source your code so other people can try your project. But if your project includes personal data (e.g. iMessage Wrapped), make sure to tell Claude to "Wipe the code of all personal information, e.g. contact names, before pushing to Github."</li>
+                <li><strong>Keep it simple to start.</strong> Pick a tiny project before you try a harder one. Don't worry about skills, subagents, webhooks, and all other "best practice" guides until you feel comfortable building with the basics.</li>
+                <li><strong>Ask AI for help.</strong> If you get confused, open a normal Claude or ChatGPT window, screenshot/paste your problem, and ask what's going wrong.</li>
+            </ul>
+        </div>
+
+        <div class="examples">
+            <h2>Examples</h2>
+            <p>If it's useful to have examples, I had Claude write two blog posts about how I built my iMessage Wrapped and YouTube converter, including the actual prompts I sent it. If you read them, you'll see how stupid my questions are, and how little technical knowledge you need to make this work!</p>
+
+            <ul>
+                <li><a href="https://drive.google.com/file/d/1QX9G04FqMbEmLA-1jEa8J5tZACBMAizJ/view?usp=sharing">I Hate Video</a>: generate a clean, grammatical PDF transcript for any YouTube video</li>
+                <li><a href="https://drive.google.com/file/d/1vjg5Hu5N0hJq66TVlK25Fd0x1QUDFF6f/view?usp=sharing">iMessage Wrapped</a>: a decade of evolving relationships and interests, as told through my texts</li>
+            </ul>
+        </div>
+
+        <p class="sign-off">Happy vibecoding!</p>
+        <p class="author">Jasmine Sun</p>
+    </div>
+</body>
+</html>
